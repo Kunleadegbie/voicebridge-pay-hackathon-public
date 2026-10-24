@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Sandbox checkout return — VoiceBridge AI Pay</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/payment-result.js" defer></script>
+</head>
+<body>
+  <main class="site">
+    <header class="topbar"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">◉</span><span>VoiceBridge <strong>AI Pay</strong></span></a><span class="stage-tag">Sandbox only</span></header>
+    <section class="hero" aria-labelledby="return-title">
+      <p class="eyebrow">Stage 3D · Buyer approval verification</p>
+      <h1 id="return-title">Returned from PayPal <span>Sandbox.</span></h1>
+      <p class="intro">Your browser returned from PayPal's test checkout. This is not proof of payment approval or capture.</p>
+      <div class="notice" role="status"><strong>Next step:</strong> Use <strong>Verify PayPal approval</strong> below. A separate confirmation button becomes available only if PayPal reports <strong>APPROVED</strong> for exactly USD 5.00. Never infer payment status from this redirect alone.</div>
+      <section class="checkout-card" aria-labelledby="verify-title">
+        <h2 id="verify-title">Verify this sandbox checkout</h2>
+        <p>First check the PayPal order status. If it is <strong>APPROVED</strong> for USD $5.00, a separate deliberate click can initiate sandbox capture. Nothing is automatically captured when this page opens.</p>
+        <div class="pilot-actions">
+          <button id="pilot-verify" type="button">Verify PayPal approval</button>
+          <button id="pilot-capture" type="button" disabled>Confirm simulated US$5.00 capture</button>
+        </div>
+        <p id="pilot-result" role="status" aria-live="polite">Verification not started.</p>
+      </section>
+      <p><a href="/">Return to VoiceBridge AI Pay</a></p>
+    </section>
+    <footer><span>© 2026 Chumcred Limited</span><span>No live money is moved.</span></footer>
+  </main>
+</body>
+</html>

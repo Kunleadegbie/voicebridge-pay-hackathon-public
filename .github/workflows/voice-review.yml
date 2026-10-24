@@ -1,0 +1,45 @@
+name: VoiceBridge AI Pay review tests
+
+on:
+  pull_request:
+    paths:
+      - "backend/**"
+      - "web/**"
+      - "docs/STAGE3E_NATLAS_VOICE.md"
+      - ".github/workflows/voice-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install backend test dependencies
+        working-directory: backend
+        run: python -m pip install -r requirements.txt
+      - name: Run sandbox and voice quota tests without providers
+        working-directory: backend
+        run: python -m pytest -q
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax checks
+        working-directory: web
+        run: |
+          node --check api/voice.js
+          node --check natlas-voice.js
+          node --check checkout.js
+      - name: Run frontend tests with mocked services
+        working-directory: web
+        run: npm test

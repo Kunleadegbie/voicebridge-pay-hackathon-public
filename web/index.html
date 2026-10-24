@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="VoiceBridge AI Pay — multilingual AI-powered payment accessibility prototype by Chumcred Limited.">
+  <title>VoiceBridge AI Pay — Chumcred Limited</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+  <script src="/checkout.js" defer></script>
+  <script src="/natlas-voice.js" defer></script>
+</head>
+<body>
+  <main class="site">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="VoiceBridge AI Pay home">
+        <span class="brand-mark" aria-hidden="true">◉</span>
+        <span>VoiceBridge <strong>AI Pay</strong></span>
+      </a>
+      <span class="stage-tag">Hackathon prototype · Sandbox only</span>
+    </header>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Financial access through familiar languages</p>
+      <h1 id="page-title">Make digital payments easier to understand. <span>Start with your voice.</span></h1>
+      <p class="intro">VoiceBridge AI Pay is a competition prototype by Chumcred Limited. We are developing multilingual AI guidance and controlled PayPal sandbox checkout for users who benefit from a simpler, voice-first experience.</p>
+      <div class="notice" role="note"><strong>Stage 3D sandbox pilot:</strong> The cloud connection is working. This checkout pilot supports controlled sandbox demonstrations when enabled on both cloud services. Browser speech recognition is an optional preview, not the N-ATLAS multilingual voice service.</div>
+    </section>
+    <section class="status-card" aria-labelledby="cloud-title">
+      <div>
+        <p class="eyebrow">Stage 2 · Cloud foundation</p>
+        <h2 id="cloud-title">Cloud backend connectivity</h2>
+        <p id="cloud-status" role="status" aria-live="polite">Not checked yet.</p>
+      </div>
+      <button id="check-cloud" type="button">Check cloud connection</button>
+    </section>
+    <section class="checkout-card" aria-labelledby="pilot-title">
+      <p class="eyebrow">Stage 3D · Voice-first sandbox checkout pilot</p>
+      <h2 id="pilot-title">Understand the payment. Decide for yourself.</h2>
+      <p class="intro">This early pilot uses a fixed <strong>US$5.00 simulated payment</strong>. No real funds move. The browser preview below is not N-ATLAS transcription; our four-language hosted AI service is a separate integration milestone.</p>
+
+      <div class="pilot-fields">
+        <div>
+          <label for="pilot-language">Preferred language</label>
+          <select id="pilot-language">
+            <option value="en-NG">Nigerian English</option>
+            <option value="yo-NG">Yorùbá</option>
+            <option value="ha-NG">Hausa</option>
+            <option value="ig-NG">Igbo</option>
+          </select>
+        </div>
+        <div>
+          <label for="voice-transcript">Optional spoken or typed note</label>
+          <textarea id="voice-transcript" rows="3" maxlength="240" placeholder="Example: Help me understand this test payment."></textarea>
+        </div>
+      </div>
+
+      <div class="pilot-actions">
+        <button id="pilot-mic" class="secondary-button" type="button">🎤 Try browser voice input</button>
+        <button id="pilot-listen" class="secondary-button" type="button">🔊 Hear English payment summary</button>
+      </div>
+      <p id="pilot-voice-status" class="field-help" role="status" aria-live="polite">Browser speech recognition is experimental and depends on language/browser support. It may use a third-party speech service. Do not say names, PINs, passwords, OTPs, account numbers, or other private information. A text fallback is always available.</p>
+
+      <div class="price-review" aria-label="Fixed sandbox payment summary">
+        <div><strong>Financial literacy demonstration</strong><p>Simulated PayPal transaction — not a purchase or money transfer</p></div>
+        <strong>USD $5.00</strong>
+      </div>
+      <label class="checkbox-row" for="pilot-confirm">
+        <input id="pilot-confirm" type="checkbox">
+        <span>I have checked the fixed US$5.00 sandbox amount and understand that clicking the button will take me to PayPal to approve a simulated transaction. My speech or typed note cannot authorize a payment.</span>
+      </label>
+      <button id="pilot-start" type="button" disabled>Continue to PayPal Sandbox</button>
+      <p id="pilot-checkout-status" role="status" aria-live="polite">Review the fixed US$5.00 amount, then tick the checkbox to begin a sandbox-only test. Checkout is available only when both cloud services are configured.</p>
+    </section>
+    <section class="checkout-card natlas-lab" aria-labelledby="natlas-title">
+      <p class="eyebrow">Stage 3E-A · Restricted N-ATLAS Speech Lab</p>
+      <h2 id="natlas-title">Test genuine Nigerian-language transcription</h2>
+      <p class="intro">This restricted speech laboratory supports authorised demonstrations using the official N-ATLAS ASR service. Nigerian English transcription has been successfully tested. Yorùbá, Hausa and Igbo transcription testing remains pending. Access is disabled by default and requires a demonstration passcode. This feature converts speech to text only; it cannot initiate or authorise payments and does not provide spoken answers.</p>
+      <div class="pilot-fields">
+        <div>
+          <label for="natlas-language">Spoken language</label>
+          <select id="natlas-language">
+            <option value="en-NG">Nigerian English</option>
+            <option value="yo-NG">Yorùbá</option>
+            <option value="ha-NG">Hausa</option>
+            <option value="ig-NG">Igbo</option>
+          </select>
+        </div>
+        <div>
+          <label for="natlas-passcode">Restricted demonstration passcode</label>
+          <input id="natlas-passcode" type="password" placeholder="Provided separately to authorized testers" autocomplete="off" maxlength="128">
+        </div>
+      </div>
+      <div class="pilot-actions">
+        <button id="natlas-record" type="button" class="secondary-button">🎙️ Start short recording</button>
+        <button id="natlas-stop" type="button" class="secondary-button" disabled>Stop recording</button>
+      </div>
+      <label class="checkbox-row" for="natlas-privacy">
+        <input id="natlas-privacy" type="checkbox">
+        <span>I explicitly consent to submit this test audio to a separate N-ATLAS speech provider. I will not include account details, card numbers, PINs, passwords, OTPs, BVNs, names or other private information. Speech never approves payments.</span>
+      </label>
+      <div class="pilot-actions">
+        <button id="natlas-submit" type="button" disabled>Transcribe using N-ATLAS</button>
+        <button id="natlas-check" type="button" class="secondary-button" disabled>Check transcription status</button>
+        <button id="natlas-capacity" type="button" class="secondary-button" disabled>Check demo capacity</button>
+      </div>
+      <p id="natlas-capacity-status" role="status" aria-live="polite">Shared daily and overall N-ATLAS test limits apply. Enter your demo passcode to check remaining capacity without recording or GPU charges.</p>
+      <p id="natlas-status" role="status" aria-live="polite">The N-ATLAS voice pilot requires separate cloud configuration. Do not submit private financial information.</p>
+      <div class="voice-transcript-box" aria-label="Verified N-ATLAS transcript">
+        <strong>N-ATLAS transcript</strong>
+        <p id="natlas-result" aria-live="polite">No transcription yet.</p>
+      </div>
+    </section>
+    <section class="features" aria-label="Development roadmap">
+      <article class="feature"><span class="step">01</span><h3>PayPal sandbox</h3><p>Real sandbox approval and capture have been verified. Browser pilot is enabled only after secure server configuration.</p></article>
+      <article class="feature"><span class="step">02</span><h3>Multilingual voice</h3><p>Experimental browser voice input is available. Nigerian English transcription using N-ATLAS has been successfully verified in restricted testing. Yorùbá, Hausa and Igbo transcription remain pending verification.</p></article>
+      <article class="feature"><span class="step">03</span><h3>Accessible experience</h3><p>Accessible text review, separate deliberate approval/capture and mobile-friendly controls.</p></article>
+    </section>
+   <footer>
+  <span>© 2026 Chumcred Limited</span>
+  <span>Demo environment only. No live money is moved.</span>
+  <span>
+    <a href="/privacy-notice.html"
+       style="color:#77d5f5;text-decoration:underline;">
+      Privacy Notice (Review Draft)
+    </a>
+  </span>
+</footer>
+  </main>
+</body>
+</html>

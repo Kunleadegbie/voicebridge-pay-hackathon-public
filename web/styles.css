@@ -1,0 +1,51 @@
+:root{color-scheme:dark;font-family:Inter,"Segoe UI",Arial,sans-serif;background:#091628;color:#f4f7fb}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top right,#123557,#091628 58%);min-height:100vh}
+.site{max-width:1120px;margin:0 auto;padding:28px 24px 20px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:inline-flex;gap:12px;align-items:center;color:inherit;text-decoration:none;font-size:1.12rem;letter-spacing:-.02em}
+.brand-mark{display:inline-grid;place-items:center;background:#ffc857;border-radius:11px;color:#0a1425;height:35px;width:35px;font-size:1.5rem}
+.stage-tag{font-size:.8rem;color:#dfebfa;border:1px solid #355270;border-radius:99px;padding:8px 12px}
+.hero{max-width:880px;padding:84px 0 44px}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:#ffcf6c;font-weight:700}
+h1{font-size:clamp(2.45rem,5.7vw,5rem);line-height:1.09;letter-spacing:-.045em;margin:20px 0}
+h1 span{color:#70d6f5}
+.intro{color:#d3e0ee;line-height:1.7;font-size:1.08rem;max-width:720px}
+.notice{border-left:4px solid #ffc857;background:#162c44;padding:16px 18px;line-height:1.6;border-radius:0 10px 10px 0;color:#e5edf6;margin-top:29px}
+.status-card{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;padding:26px 28px;border-radius:16px;border:1px solid #355270;background:#11263e}
+.status-card h2{margin:7px 0;font-size:1.5rem}
+#cloud-status{color:#d7e6f3;margin-bottom:0}
+button{cursor:pointer;background:#ffcf6c;color:#14243b;font-weight:700;font-size:1rem;border-radius:11px;border:0;padding:14px 19px}
+button:disabled{opacity:.65;cursor:progress}
+button:focus-visible,a:focus-visible{outline:3px solid #7cd8ff;outline-offset:4px}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.feature{padding:25px 24px;background:#102137;border:1px solid #2d465f;border-radius:15px}
+.step{color:#78d4f3;font-size:.86rem;font-weight:700}
+.feature h3{margin:12px 0}
+.feature p{color:#cfdded;line-height:1.6;margin-bottom:0}
+footer{margin:45px 0 0;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;color:#adc1d5;font-size:.83rem}
+@media(max-width:700px){.site{padding:18px}.hero{padding:48px 0 28px}.features{grid-template-columns:1fr}.status-card{padding:22px}}
+
+.checkout-card{margin-top:28px;border:1px solid #355270;border-radius:18px;background:#102a42;padding:30px}
+.checkout-card h2{font-size:clamp(1.4rem,3vw,2rem);margin:12px 0}
+.checkout-card p{line-height:1.65;color:#d6e4f1}
+.pilot-fields{display:grid;grid-template-columns:minmax(180px,1fr) 2fr;gap:16px;margin:22px 0}
+.pilot-fields label{display:block;margin-bottom:9px;font-weight:700}
+.pilot-fields select,.pilot-fields textarea{width:100%;padding:14px;border:1px solid #7093ad;border-radius:10px;background:#091e33;color:#f4f7fb;font:inherit}
+.pilot-fields select:focus-visible,.pilot-fields textarea:focus-visible{outline:3px solid #7cd8ff}
+.pilot-actions{display:flex;gap:12px;flex-wrap:wrap;margin:15px 0}
+.secondary-button{background:#21425c;color:#f4f7fb;border:1px solid #6f91aa}
+.field-help{font-size:.85rem;color:#b9cfdf}
+.price-review{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px;border:1px solid #466882;border-radius:12px;background:#0b2035;margin:22px 0}
+.price-review p{font-size:.87rem;margin:8px 0 0}
+.price-review strong:last-child{white-space:nowrap;font-size:1.2rem}
+.checkbox-row{display:flex;gap:12px;align-items:flex-start;line-height:1.6;margin-bottom:18px}
+.checkbox-row input{flex:none;width:19px;height:19px;margin-top:3px}
+#pilot-checkout-status,#pilot-result{color:#d5e6f6;font-size:.95rem}
+@media(max-width:700px){.checkout-card{padding:20px}.pilot-fields{grid-template-columns:1fr}.price-review{align-items:flex-start;flex-direction:column}}
+
+.natlas-lab{margin-top:24px}
+.natlas-lab input[type=password]{width:100%;background:#091e33;color:#f4f7fb;border:1px solid #7093ad;border-radius:10px;padding:14px;font:inherit}
+.natlas-lab input[type=password]:focus-visible{outline:3px solid #7cd8ff}
+.voice-transcript-box{border:1px solid #466882;background:#0b2035;padding:17px;border-radius:12px;margin-top:14px;overflow-wrap:anywhere}
+.voice-transcript-box p{margin:10px 0 0;white-space:pre-wrap}
